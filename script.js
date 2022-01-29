@@ -28,6 +28,7 @@ const pokemon = {
 function createMyPokemon() {
     const img = document.createElement('img');
     img.src = pokemon.images.front;
+    img.className = 'img-size';
     document.getElementById('playerPokemon').appendChild(img);
     const name = pokemon.name;
     const health = pokemon.health;
@@ -39,6 +40,7 @@ function createMyPokemon() {
 function createComputerPokemon() {
     const img = document.createElement('img');
     img.src = pokemon.images.back;
+    img.className = 'img-size';
     document.getElementById('computerPokemon').appendChild(img);
     const name = pokemon.name;
     const health = pokemon.health;
