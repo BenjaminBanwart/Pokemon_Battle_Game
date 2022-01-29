@@ -5,7 +5,7 @@ const pokemon = {
 
     images: {
         front: "./assets/pngfind.com-charizard-sprite-png-4458716-min.png",
-        back: "./assets/pngfind.com-charzard-png-4911765-min.png"
+        back: "./assets/oie_29213453bBbhPS6U.png"
     },
 
     moves: {
