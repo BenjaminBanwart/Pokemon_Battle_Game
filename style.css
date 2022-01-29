@@ -1,18 +1,49 @@
 .background-container {
     position: absolute;
-    z-index: -2;
+    z-index: -1;
     width: 70%;
     height: 60%;
     left: 15%;
-    top: 4em;
+    top: 6em;
 }
 
 .background {
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    position: absolute;
 }
 
 .img-size {
-    width: 60px;
+    width: 18%;
+    z-index: 4;
+}
+
+.platform-container {
+    width: 60%;
+    margin-left: 15%;
+    margin-top: 33%;
+    position: absolute;
+    z-index: 1;
+}
+
+.platform {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.image {
+    z-index: 3;
+    position: absolute;
+}
+
+.positionPlayer {
+    margin-top: 40%;
+    margin-left: 33%;
+}
+
+.positionComp {
+    margin-top: 29%;
+    margin-left: 54%;
 }
