@@ -39,12 +39,12 @@
 }
 
 .positionPlayer {
-    margin-top: 38%;
+    margin-top: 36%;
     margin-left: 31%;
 }
 
 .positionComp {
-    margin-top: 27%;
+    margin-top: 26%;
     margin-right: 34%;
     transform: scaleX(-1);
 }
