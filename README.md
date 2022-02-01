@@ -1,3 +1,3 @@
 # Pokemon_Battle_Game
 
-Battle Charizard against Charizard in this mini-game!
+Battle your Pokemon against a CPU in this mini-game!
