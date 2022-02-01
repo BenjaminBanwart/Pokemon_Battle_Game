@@ -15,7 +15,7 @@
 }
 
 .img-size {
-    width: 18%;
+    width: 22%;
     z-index: 4;
 }
 
@@ -39,11 +39,11 @@
 }
 
 .positionPlayer {
-    margin-top: 40%;
-    margin-left: 33%;
+    margin-top: 38%;
+    margin-left: 31%;
 }
 
 .positionComp {
-    margin-top: 31%;
-    margin-left: 55%;
+    margin-top: 30%;
+    margin-left: 54%;
 }
