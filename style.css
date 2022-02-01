@@ -44,6 +44,7 @@
 }
 
 .positionComp {
-    margin-top: 30%;
-    margin-left: 54%;
+    margin-top: 27%;
+    margin-right: 34%;
+    transform: scaleX(-1);
 }
