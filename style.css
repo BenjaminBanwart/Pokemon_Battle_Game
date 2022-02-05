@@ -116,3 +116,35 @@ input {
     color: red;
     visibility: hidden;
 }
+
+#attack1 {
+    width: 30%;
+    height: 8em;
+    margin-left: 18%;
+    margin-top: 70%;
+    position: absolute;
+}
+
+#attack2 {
+    width: 30%;
+    height: 8em;
+    margin-left: 50%;
+    margin-top: 70%;
+    position: absolute;
+}
+
+#attack3 {
+    width: 30%;
+    height: 8em;
+    position: absolute;
+    margin-top: 80%;
+    margin-left: 18%;
+}
+
+#attack4 {
+    width: 30%;
+    height: 8em;
+    margin-left: 50%;
+    margin-top: 80%;
+    position: absolute;
+}
