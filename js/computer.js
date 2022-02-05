@@ -13,4 +13,4 @@ const cpu = {
 }
 
 cpu.createComputerPokemon()
-
+console.log(cpu)

@@ -24,47 +24,55 @@ window.onclick = function(event) {
     }
 }
 
-var charButton = document.querySelector('#charizard').addEventListener("click", function() {
-    
+//pokemon selection process
+var doneButton = document.querySelector('.done').addEventListener("click", function() {
+    modal.style.display = "none";
+    user.pokemon = []
+    cpu.pokemon = []
+    let inputPokemonlist = document.querySelectorAll('.pokeInputDiv')
+    let totalnum = 0;
+    for(let i = 0; i < inputPokemonlist.length; i++) {
+        totalnum += Number(inputPokemonlist[i].children[0].children[0].value)
+    }
+    if(totalnum < 3 || totalnum > 3) {
+        //unhide error text
+        document.querySelector('.errorMessage').style.visibility = 'visible';
+    }else {
+        document.querySelector('.errorMessage').style.visibility = 'hidden';
+        for(let i = 0; i < inputPokemonlist.length; i++) {
+            let pokemonCount = Number(inputPokemonlist[i].children[0].children[0].value)
+            let pokemonName = inputPokemonlist[i].children[0].textContent.trim();
+            for(let j = 0; j < pokemonCount; j++) {
+                getPokemonByName(pokemonName, pokemonCount)
+            }
+        }
+        console.log("final pokemon list")
+        console.log(user.pokemon)
+    }
+    getComputerChoice()
+    getCurrentPokemon()
 })
 
-var gyarButton = document.querySelector('#gyarados').addEventListener("click", function() {
-    
-})
+function getPokemonByName(name, count) {  
+    for(let p = 0; p < pokemonChoices.length; p++) {
+        if(name == pokemonChoices[p].name) {
+            user.pokemon.push(pokemonChoices[p])
+        }
+    }
+}
 
-var oshButton = document.querySelector('#oshawott').addEventListener("click", function() {
-    
-})
+function getCurrentPokemon() {
+    user.currentPokemon.push(user.pokemon[0])
+    cpu.currentPokemon.push(cpu.pokemon[0])
+}
 
-var snivButton = document.querySelector('#snivy').addEventListener("click", function() {
-    
-})
-
-var gardButton = document.querySelector('#gardevoir').addEventListener("click", function() {
-    
-})
-
-var sanButton = document.querySelector('#sandile').addEventListener("click", function() {
-    
-})
-
-var pikButton = document.querySelector('#pikachu').addEventListener("click", function() {
-    
-})
-
-var bulbButton = document.querySelector('#bulbasaur').addEventListener("click", function() {
-    
-})
-
-var genButton = document.querySelector('#gengar').addEventListener("click", function() {
-    
-})
-
-var lucButton = document.querySelector('#lucario').addEventListener("click", function() {
-    
-})
-
-var checkButton = document.querySelectorAll('.check').forEach(butt => 
-    butt.addEventListener('click', function() {
-        
-    }))
+function getComputerChoice() {
+    let choice1 = Math.floor(Math.random() * 10) + 1;
+    let choice2 = Math.floor(Math.random() * 10) + 1;
+    let choice3 = Math.floor(Math.random() * 10) + 1;
+    for(let f = 0; f < pokemonChoices.length; f++) {
+        if(pokemonChoices[f].sku == choice1 || pokemonChoices[f].sku == choice2 || pokemonChoices[f].sku == choice3) {
+            cpu.pokemon.push(pokemonChoices[f])
+        }
+    }
+}

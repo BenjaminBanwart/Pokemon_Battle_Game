@@ -72,7 +72,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 15em; /* Could be more or less, depending on screen size */
-    height: 40%;
+    height: 45%;
 }
 
   /* The Close Button */
@@ -98,4 +98,21 @@
 
 input {
     margin: 0.8em;
+}
+
+.done {
+    width: 5em;
+}
+
+.check {
+    width: 30px;
+}
+
+.pokeInputDiv {
+    width: 100%;
+}
+
+.errorMessage {
+    color: red;
+    visibility: hidden;
 }

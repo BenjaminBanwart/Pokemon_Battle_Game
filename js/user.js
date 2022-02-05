@@ -13,3 +13,4 @@ const user = {
 }
 
 user.createUserPokemon()
+console.log(user)
