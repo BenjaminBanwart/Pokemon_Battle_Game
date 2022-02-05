@@ -13,3 +13,4 @@ const cpu = {
 }
 
 cpu.createComputerPokemon()
+

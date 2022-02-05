@@ -23,3 +23,48 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+var charButton = document.querySelector('#charizard').addEventListener("click", function() {
+    
+})
+
+var gyarButton = document.querySelector('#gyarados').addEventListener("click", function() {
+    
+})
+
+var oshButton = document.querySelector('#oshawott').addEventListener("click", function() {
+    
+})
+
+var snivButton = document.querySelector('#snivy').addEventListener("click", function() {
+    
+})
+
+var gardButton = document.querySelector('#gardevoir').addEventListener("click", function() {
+    
+})
+
+var sanButton = document.querySelector('#sandile').addEventListener("click", function() {
+    
+})
+
+var pikButton = document.querySelector('#pikachu').addEventListener("click", function() {
+    
+})
+
+var bulbButton = document.querySelector('#bulbasaur').addEventListener("click", function() {
+    
+})
+
+var genButton = document.querySelector('#gengar').addEventListener("click", function() {
+    
+})
+
+var lucButton = document.querySelector('#lucario').addEventListener("click", function() {
+    
+})
+
+var checkButton = document.querySelectorAll('.check').forEach(butt => 
+    butt.addEventListener('click', function() {
+        
+    }))
