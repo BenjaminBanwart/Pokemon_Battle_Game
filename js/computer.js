@@ -6,11 +6,10 @@ const cpu = {
     //computer's pokemon is placed onto the battlefield
     createComputerPokemon() {
         const img = document.createElement('img');
-        img.src = gengar.image;
+        img.src = cpu.currentPokemon[0].image;
         img.className = 'img-size';
         document.getElementById('computerPokemon').appendChild(img);
     }
 }
 
-cpu.createComputerPokemon()
 console.log(cpu)

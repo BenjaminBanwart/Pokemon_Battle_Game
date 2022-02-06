@@ -51,8 +51,12 @@ var doneButton = document.querySelector('.done').addEventListener("click", funct
     }
     getComputerChoice()
     getCurrentPokemon()
+    user.createUserPokemon()
+    cpu.createComputerPokemon()
+    userFightButtonsText()
 })
 
+//takes the name of the pokemon button input and compares it with the pokemon class names
 function getPokemonByName(name, count) {  
     for(let p = 0; p < pokemonChoices.length; p++) {
         if(name == pokemonChoices[p].name) {
@@ -61,11 +65,13 @@ function getPokemonByName(name, count) {
     }
 }
 
+//selects the pokemon to start the battle
 function getCurrentPokemon() {
     user.currentPokemon.push(user.pokemon[0])
     cpu.currentPokemon.push(cpu.pokemon[0])
 }
 
+//selects all three computer pokemon
 function getComputerChoice() {
     let choice1 = Math.floor(Math.random() * 10) + 1;
     let choice2 = Math.floor(Math.random() * 10) + 1;
