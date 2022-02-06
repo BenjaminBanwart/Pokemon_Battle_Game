@@ -121,7 +121,7 @@ input {
     width: 30%;
     height: 8em;
     margin-left: 18%;
-    margin-top: 70%;
+    margin-top: 45%;
     position: absolute;
 }
 
@@ -129,7 +129,7 @@ input {
     width: 30%;
     height: 8em;
     margin-left: 50%;
-    margin-top: 70%;
+    margin-top: 45%;
     position: absolute;
 }
 
@@ -137,7 +137,7 @@ input {
     width: 30%;
     height: 8em;
     position: absolute;
-    margin-top: 80%;
+    margin-top: 52%;
     margin-left: 18%;
 }
 
@@ -145,6 +145,6 @@ input {
     width: 30%;
     height: 8em;
     margin-left: 50%;
-    margin-top: 80%;
+    margin-top: 52%;
     position: absolute;
 }
