@@ -123,6 +123,7 @@ input {
     margin-left: 18%;
     margin-top: 45%;
     position: absolute;
+    border-radius: 5em;
 }
 
 #attack2 {
@@ -131,6 +132,7 @@ input {
     margin-left: 50%;
     margin-top: 45%;
     position: absolute;
+    border-radius: 5em;
 }
 
 #attack3 {
@@ -139,6 +141,7 @@ input {
     position: absolute;
     margin-top: 52%;
     margin-left: 18%;
+    border-radius: 5em;
 }
 
 #attack4 {
@@ -147,4 +150,5 @@ input {
     margin-left: 50%;
     margin-top: 52%;
     position: absolute;
+    border-radius: 5em;
 }
