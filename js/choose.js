@@ -54,8 +54,8 @@ var doneButton = document.querySelector('.done').addEventListener("click", funct
     user.createUserPokemon()
     cpu.createComputerPokemon()
     userFightButtonsText()
-    userPokemonHealth()
-    computerPokemonHealth()
+    userPokemonHealthAndName()
+    computerPokemonHealthAndName()
 })
 
 //takes the name of the pokemon button input and compares it with the pokemon class names

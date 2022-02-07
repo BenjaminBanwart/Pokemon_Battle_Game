@@ -152,3 +152,45 @@ input {
     position: absolute;
     border-radius: 5em;
 }
+
+.userPokemonStatsDiv {
+    width: 18%;
+    margin-left: 60%;
+    margin-top: 21%;
+    background-color: antiquewhite;
+    border-radius: 10px 2px;
+}
+
+.computerPokemonStatsDiv {
+    width: 18%;
+    margin-left: 22%;
+    margin-top: 12%;
+    background-color: antiquewhite;
+    border-radius: 10px 2px;
+}
+
+#userPokemonName {
+    margin-left: 10px;
+}
+
+#userHealthbar {
+    margin-left: 6em;
+}
+
+#userHealth {
+    margin-left: 6em;
+    margin-bottom: 0px;
+}
+
+#computerPokemonName {
+    margin-left: 10px;
+}
+
+#computerHealthbar {
+    margin-left: 6em;
+}
+
+#computerHealth {
+    margin-left: 6em;
+    margin-bottom: 0px;
+}
