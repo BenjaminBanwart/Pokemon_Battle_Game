@@ -49,7 +49,7 @@ function fight() {
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
+                    //computer's turn happens after 4 seconds
                     setTimeout(() => {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
@@ -76,7 +76,7 @@ function fight() {
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
+                    //computer's turn happens after 4 seconds
                     setTimeout(() => {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
@@ -103,7 +103,7 @@ function fight() {
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
+                    //computer's turn happens after 4 seconds
                     setTimeout(() => {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
@@ -130,7 +130,7 @@ function fight() {
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
+                    //computer's turn happens after 4 seconds
                     setTimeout(() => {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
