@@ -20,19 +20,19 @@ function fight() {
 
     let computerPokemonMoves = [user.currentPokemon[0].m1, user.currentPokemon[0].m2, user.currentPokemon[0].m3, user.currentPokemon[0].m4];
 
-    //gives move buttons text
+    //gives move buttons initial text
     button1.innerHTML = user.currentPokemon[0].m1.name;
     button2.innerHTML = user.currentPokemon[0].m2.name;
     button3.innerHTML = user.currentPokemon[0].m3.name;
     button4.innerHTML = user.currentPokemon[0].m4.name;
 
-    //it's going to calculate remaining health, if pokemon is dead grab the next pokemon, adjust progress bar using .value, update hp text
+    //calculate remaining health, adjust progress bar using .value
     function userDamage(damage) {
         cpu.currentPokemon[0].health = Number(computerPokemonProgressBar.value) - damage;
         return Number(computerPokemonProgressBar.value) - damage;
     }
 
-    //it's going to calculate remaining health, adjusts progress bar using .value
+    //calculate remaining health, adjusts progress bar using .value
     function cpuDamage(damage) {
         user.currentPokemon[0].health = Number(userPokemonProgressBar.value) - damage;
         return Number(userPokemonProgressBar.value) - damage;
@@ -45,10 +45,7 @@ function fight() {
         swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
-            button1.disabled = true;
-            button2.disabled = true;
-            button3.disabled = true;
-            button4.disabled = true;
+            disableButtons()
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
@@ -60,12 +57,9 @@ function fight() {
                         swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
-                            button1.disabled = false;
-                            button2.disabled = false;
-                            button3.disabled = false;
-                            button4.disabled = false;
+                            enableButtons()
                         }   
-                    }, 3000);
+                    }, 4000);
                 }
             }
         }
@@ -78,10 +72,7 @@ function fight() {
         swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
-            button1.disabled = true;
-            button2.disabled = true;
-            button3.disabled = true;
-            button4.disabled = true;
+            disableButtons()
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
@@ -93,12 +84,9 @@ function fight() {
                         swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
-                            button1.disabled = false;
-                            button2.disabled = false;
-                            button3.disabled = false;
-                            button4.disabled = false;
+                            enableButtons()
                         }   
-                    }, 3000);
+                    }, 4000);
                 }
             }
         }
@@ -111,10 +99,7 @@ function fight() {
         swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
-            button1.disabled = true;
-            button2.disabled = true;
-            button3.disabled = true;
-            button4.disabled = true;
+            disableButtons()
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
@@ -126,12 +111,9 @@ function fight() {
                         swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
-                            button1.disabled = false;
-                            button2.disabled = false;
-                            button3.disabled = false;
-                            button4.disabled = false;
-                        }   
-                    }, 3000);
+                            enableButtons()
+                        }
+                    }, 4000);
                 }
             }
         }
@@ -144,10 +126,7 @@ function fight() {
         swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
-            button1.disabled = true;
-            button2.disabled = true;
-            button3.disabled = true;
-            button4.disabled = true;
+            disableButtons()
             let computerChoice = Math.floor(Math.random() * 4) + 1;
             for(let m = 0; m < computerPokemonMoves.length; m++) {
                 if(computerPokemonMoves[m].sku == computerChoice) {
@@ -159,17 +138,15 @@ function fight() {
                         swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
-                            button1.disabled = false;
-                            button2.disabled = false;
-                            button3.disabled = false;
-                            button4.disabled = false;
+                            enableButtons()
                         }   
-                    }, 3000);
+                    }, 4000);
                 }
             }
         }
     })
 
+    //insert function whenever user's pokemon might get KO'd
     function swapUserPokemon() {
         if(user.currentPokemon[0].health <= 0) {
             user.currentPokemon.splice(0, 1);
@@ -177,6 +154,7 @@ function fight() {
                 user.currentPokemon.push(user.pokemon[0]);
                 user.pokemon.splice(0, 1)
                 setTimeout(() => {
+                    //updates game with new current user pokemon
                     userPokemonProgressBar.value = user.currentPokemon[0].health;
                     userPokemonProgressBar.max = user.currentPokemon[0].health;
                     userPokemonName.innerHTML = user.currentPokemon[0].name;
@@ -190,6 +168,7 @@ function fight() {
         }
     }
 
+    //insert function whenever computer's pokemon might get KO'd
     function swapComputerPokemon() {
         if(cpu.currentPokemon[0].health <= 0) {
             cpu.currentPokemon.splice(0, 1);
@@ -197,6 +176,7 @@ function fight() {
                 cpu.currentPokemon.push(cpu.pokemon[0]);
                 cpu.pokemon.splice(0, 1)
                 setTimeout(() => {
+                    //updates game with new current computer pokemon
                     computerPokemonProgressBar.value = cpu.currentPokemon[0].health;
                     computerPokemonProgressBar.max = cpu.currentPokemon[0].health;
                     computerPokemonName.innerHTML = cpu.currentPokemon[0].name;
@@ -204,5 +184,21 @@ function fight() {
                 }, 2000);
             }
         }
+    }
+
+    //insert function when it is computer's  turn
+    function disableButtons() {
+        button1.disabled = true;
+        button2.disabled = true;
+        button3.disabled = true;
+        button4.disabled = true;
+    }
+
+    //insert function when it is user's turn
+    function enableButtons() {
+        button1.disabled = false;
+        button2.disabled = false;
+        button3.disabled = false;
+        button4.disabled = false;
     }
 }

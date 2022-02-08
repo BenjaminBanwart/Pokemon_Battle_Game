@@ -175,6 +175,7 @@ input {
 
 #userHealthbar {
     margin-left: 6em;
+    width: 14em;
 }
 
 #userHealth {
@@ -188,6 +189,7 @@ input {
 
 #computerHealthbar {
     margin-left: 6em;
+    width: 14em;
 }
 
 #computerHealth {
