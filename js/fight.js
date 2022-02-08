@@ -213,6 +213,10 @@ function fight() {
     }
 
     function userMoveAnimation() {
+        
+    }
+
+    function computerMoveAnimation() {
 
     }
 }
