@@ -68,7 +68,9 @@ function getPokemonByName(name, count) {
 //selects the pokemon to start the battle
 function getCurrentPokemon() {
     user.currentPokemon.push(user.pokemon[0])
+    delete user.pokemon[0];
     cpu.currentPokemon.push(cpu.pokemon[0])
+    delete cpu.pokemon[0];
 }
 
 //selects all three computer pokemon
