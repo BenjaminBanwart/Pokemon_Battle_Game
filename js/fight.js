@@ -28,13 +28,13 @@ function fight() {
 
     //it's going to calculate remaining health, if pokemon is dead grab the next pokemon, adjust progress bar using .value, update hp text
     function userDamage(damage) {
-        user.currentPokemon[0].health = Number(computerPokemonProgressBar.value) - damage;
+        cpu.currentPokemon[0].health = Number(computerPokemonProgressBar.value) - damage;
         return Number(computerPokemonProgressBar.value) - damage;
     }
 
     //it's going to calculate remaining health, adjusts progress bar using .value
     function cpuDamage(damage) {
-        cpu.currentPokemon[0].health = Number(userPokemonProgressBar.value) - damage;
+        user.currentPokemon[0].health = Number(userPokemonProgressBar.value) - damage;
         return Number(userPokemonProgressBar.value) - damage;
     }
 
@@ -42,6 +42,7 @@ function fight() {
         document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m1.damage);
         user.turn = false;
         cpu.turn = true;
+        swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
             button1.disabled = true;
@@ -56,6 +57,7 @@ function fight() {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
                         cpu.turn = false;
+                        swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
                             button1.disabled = false;
@@ -73,6 +75,7 @@ function fight() {
         document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m2.damage);
         user.turn = false;
         cpu.turn = true;
+        swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
             button1.disabled = true;
@@ -87,6 +90,7 @@ function fight() {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
                         cpu.turn = false;
+                        swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
                             button1.disabled = false;
@@ -104,6 +108,7 @@ function fight() {
         document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m3.damage);
         user.turn = false;
         cpu.turn = true;
+        swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
             button1.disabled = true;
@@ -118,6 +123,7 @@ function fight() {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
                         cpu.turn = false;
+                        swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
                             button1.disabled = false;
@@ -135,6 +141,7 @@ function fight() {
         document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m4.damage);
         user.turn = false;
         cpu.turn = true;
+        swapComputerPokemon()
         if(user.turn == false) {
             //on computer turn, hide attack move buttons
             button1.disabled = true;
@@ -149,6 +156,7 @@ function fight() {
                         document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
                         user.turn = true;
                         cpu.turn = false;
+                        swapUserPokemon()
                         if(user.turn == true) {
                             //on user turn, attack move buttons become available again
                             button1.disabled = false;
@@ -161,9 +169,40 @@ function fight() {
             }
         }
     })
-    if(user.currentPokemon[0].health <= 0) {
-        console.log('hi')
-        user.currentPokemon.pop();
-        //user.currentPokemon.push(user.pokemon[1]);
+
+    function swapUserPokemon() {
+        if(user.currentPokemon[0].health <= 0) {
+            user.currentPokemon.splice(0, 1);
+            if(user.pokemon.length > 0) {
+                user.currentPokemon.push(user.pokemon[0]);
+                user.pokemon.splice(0, 1)
+                setTimeout(() => {
+                    userPokemonProgressBar.value = user.currentPokemon[0].health;
+                    userPokemonProgressBar.max = user.currentPokemon[0].health;
+                    userPokemonName.innerHTML = user.currentPokemon[0].name;
+                    document.getElementById('playerImage').src = user.currentPokemon[0].image;
+                    button1.innerHTML = user.currentPokemon[0].m1.name;
+                    button2.innerHTML = user.currentPokemon[0].m2.name;
+                    button3.innerHTML = user.currentPokemon[0].m3.name;
+                    button4.innerHTML = user.currentPokemon[0].m4.name;
+                }, 2000);
+            }
+        }
+    }
+
+    function swapComputerPokemon() {
+        if(cpu.currentPokemon[0].health <= 0) {
+            cpu.currentPokemon.splice(0, 1);
+            if(cpu.pokemon.length > 0) {
+                cpu.currentPokemon.push(cpu.pokemon[0]);
+                cpu.pokemon.splice(0, 1)
+                setTimeout(() => {
+                    computerPokemonProgressBar.value = cpu.currentPokemon[0].health;
+                    computerPokemonProgressBar.max = cpu.currentPokemon[0].health;
+                    computerPokemonName.innerHTML = cpu.currentPokemon[0].name;
+                    document.getElementById('computerImage').src = cpu.currentPokemon[0].image;
+                }, 2000);
+            }
+        }
     }
 }

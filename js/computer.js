@@ -7,6 +7,7 @@ const cpu = {
     createComputerPokemon() {
         const img = document.createElement('img');
         img.src = cpu.currentPokemon[0].image;
+        img.id = 'computerImage'
         img.className = 'img-size';
         document.getElementById('computerPokemon').appendChild(img);
     }
