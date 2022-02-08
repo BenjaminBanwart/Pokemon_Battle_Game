@@ -73,6 +73,7 @@
     border: 1px solid #888;
     width: 15em; /* Could be more or less, depending on screen size */
     height: 45%;
+    border-radius: 5px;
 }
 
   /* The Close Button */
@@ -94,6 +95,7 @@
     width: 9em;
     height: 4em;
     margin-left: 46vw;
+    margin-top: 12px;
 }
 
 input {
@@ -121,18 +123,22 @@ input {
     width: 30%;
     height: 8em;
     margin-left: 18%;
-    margin-top: 45%;
+    margin-top: 44%;
     position: absolute;
     border-radius: 5em;
+    box-shadow: 3px 3px 4px grey;
+    font-size: 100%;
 }
 
 #attack2 {
     width: 30%;
     height: 8em;
     margin-left: 50%;
-    margin-top: 45%;
+    margin-top: 44%;
     position: absolute;
     border-radius: 5em;
+    box-shadow: 3px 3px 4px grey;
+    font-size: 100%;
 }
 
 #attack3 {
@@ -142,6 +148,8 @@ input {
     margin-top: 52%;
     margin-left: 18%;
     border-radius: 5em;
+    box-shadow: 3px 3px 4px grey;
+    font-size: 100%;
 }
 
 #attack4 {
@@ -151,6 +159,8 @@ input {
     margin-top: 52%;
     position: absolute;
     border-radius: 5em;
+    box-shadow: 3px 3px 4px grey;
+    font-size: 100%;
 }
 
 .userPokemonStatsDiv {
@@ -159,6 +169,7 @@ input {
     margin-top: 19%;
     background-color: antiquewhite;
     border-radius: 10px 2px;
+    box-shadow: 4px 4px 4px grey;
 }
 
 .computerPokemonStatsDiv {
@@ -167,32 +178,62 @@ input {
     margin-top: 12%;
     background-color: antiquewhite;
     border-radius: 10px 2px;
+    box-shadow: 4px 4px 4px grey;
 }
 
 #userPokemonName {
-    margin-left: 10px;
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 8px;
 }
 
 #userHealthbar {
     margin-left: 6em;
     width: 14em;
-}
-
-#userHealth {
-    margin-left: 6em;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 #computerPokemonName {
-    margin-left: 10px;
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 8px;
 }
 
 #computerHealthbar {
     margin-left: 6em;
     width: 14em;
+    margin-bottom: 5px;
 }
 
-#computerHealth {
-    margin-left: 6em;
-    margin-bottom: 0px;
+#gameOverDiv {
+    position: absolute;
+    top: 4em;
+    width: 100%;
+    height: 80%;
+    padding-top: 0px;
+    background-color: wheat;
+    visibility: hidden;
+}
+
+#gameOver {
+    font-size: 2000%;
+    text-align: center;
+    color: red;
+}
+
+#winDiv {
+    position: absolute;
+    top: 26em;
+    width: 60%;
+    left: 24em;
+    background-color: aliceblue;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+#win {
+    text-align: center;
+    font-size: 1000%;
+    padding: 0px;
+    margin: 0px;
 }
