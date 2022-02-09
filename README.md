@@ -10,7 +10,7 @@ https://benjaminbanwart.github.io/Pokemon_Battle_Game/
 - If all of the computer's party of pokemon are eleminated, the user wins.
 - If all of the user's party of pokemon are eleminated, the computer wins and it's game over.
 ### Order of Creation
-This is the order of operations in which I created this application.
+The order of operations in which I created this application.
 - Created and organized files
 - Provided a JS class constructor for pokemon and began building out pokemon classes
 - Used CSS, HTML, and images to construct the battlefield
