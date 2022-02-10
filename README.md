@@ -29,3 +29,5 @@ The order of operations in which I created this application.
 - High damage moves have higher chance to miss target
 - Resize pokemon png's to all fit well
 - Make page responsive
+- Show how many pokemon are left to fight
+- Reset button
