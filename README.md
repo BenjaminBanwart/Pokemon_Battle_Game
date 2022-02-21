@@ -22,8 +22,8 @@ The order of operations in which I created this application.
 - Designed win/loss scenarios
 - Searched for and fixed bugs
 - Touched up on CSS styling for MVP
+- Implemented type damage buffs
 ### Additions For Later
-- Implement type damage buffs
 - Allow user to switch out between his or her pokemon
 - Character attack and damage animations
 - High damage moves have higher chance to miss target
