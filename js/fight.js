@@ -41,7 +41,7 @@ function fight() {
     }
 
     button1.addEventListener('click', function () {
-        document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m1.damage);
+        userRealDamage(user.currentPokemon[0].m1.type, user.currentPokemon[0].m1.damage)
         user.turn = false;
         cpu.turn = true;
         swapComputerPokemon()
@@ -53,7 +53,7 @@ function fight() {
                 if(computerPokemonMoves[m].sku == computerChoice) {
                     //computer's turn happens after 3 seconds
                     setTimeout(() => {
-                        document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
+                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
                         user.turn = true;
                         cpu.turn = false;
                         swapUserPokemon()
@@ -68,7 +68,7 @@ function fight() {
     })
 
     button2.addEventListener('click', function () {
-        document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m2.damage);
+        userRealDamage(user.currentPokemon[0].m2.type, user.currentPokemon[0].m2.damage)
         user.turn = false;
         cpu.turn = true;
         swapComputerPokemon()
@@ -80,7 +80,7 @@ function fight() {
                 if(computerPokemonMoves[m].sku == computerChoice) {
                     //computer's turn happens after 3 seconds
                     setTimeout(() => {
-                        document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
+                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
                         user.turn = true;
                         cpu.turn = false;
                         swapUserPokemon()
@@ -95,7 +95,7 @@ function fight() {
     })
 
     button3.addEventListener('click', function () {
-        document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m3.damage);
+        userRealDamage(user.currentPokemon[0].m3.type, user.currentPokemon[0].m3.damage)
         user.turn = false;
         cpu.turn = true;
         swapComputerPokemon()
@@ -107,7 +107,7 @@ function fight() {
                 if(computerPokemonMoves[m].sku == computerChoice) {
                     //computer's turn happens after 3 seconds
                     setTimeout(() => {
-                        document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
+                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
                         user.turn = true;
                         cpu.turn = false;
                         swapUserPokemon()
@@ -122,7 +122,7 @@ function fight() {
     })
 
     button4.addEventListener('click', function () {
-        document.getElementById('computerHealthbar').value = userDamage(user.currentPokemon[0].m4.damage);
+        userRealDamage(user.currentPokemon[0].m4.type, user.currentPokemon[0].m4.damage)
         user.turn = false;
         cpu.turn = true;
         swapComputerPokemon()
@@ -134,7 +134,7 @@ function fight() {
                 if(computerPokemonMoves[m].sku == computerChoice) {
                     //computer's turn happens after 3 seconds
                     setTimeout(() => {
-                        document.getElementById('userHealthbar').value = cpuDamage(computerPokemonMoves[m].damage);
+                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
                         user.turn = true;
                         cpu.turn = false;
                         swapUserPokemon()
@@ -210,6 +210,24 @@ function fight() {
         button2.disabled = false;
         button3.disabled = false;
         button4.disabled = false;
+    }
+
+    function userRealDamage(type, damage) {
+        if(cpu.currentPokemon[0].weakness.includes(type)) {
+            document.getElementById('computerHealthbar').value = userDamage(damage);
+            document.getElementById('computerHealthbar').value = userDamage(damage);
+        } else {
+            document.getElementById('computerHealthbar').value = userDamage(damage);
+        }
+    }
+
+    function cpuRealDamage(type, damage) {
+        if(user.currentPokemon[0].weakness.includes(type)) {
+            document.getElementById('userHealthbar').value = cpuDamage(damage);
+            document.getElementById('userHealthbar').value = cpuDamage(damage);
+        } else {
+            document.getElementById('userHealthbar').value = cpuDamage(damage);
+        }
     }
 
     function userMoveAnimation() {
