@@ -36,6 +36,7 @@ var doneButton = document.querySelector('.done').addEventListener("click", funct
     }
     if(totalnum < 3 || totalnum > 3) {
         //unhide error text
+        modal.style.display = "block";
         document.querySelector('.errorMessage').style.visibility = 'visible';
     }else {
         document.querySelector('.errorMessage').style.visibility = 'hidden';
@@ -48,12 +49,12 @@ var doneButton = document.querySelector('.done').addEventListener("click", funct
         }
         console.log("final pokemon list")
         console.log(user.pokemon)
+        getComputerChoice()
+        getCurrentPokemon()
+        user.createUserPokemon()
+        cpu.createComputerPokemon()
+        fight()
     }
-    getComputerChoice()
-    getCurrentPokemon()
-    user.createUserPokemon()
-    cpu.createComputerPokemon()
-    fight()
 })
 
 //takes the name of the pokemon button input and compares it with the pokemon class names

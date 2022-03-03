@@ -1,4 +1,6 @@
 function fight() {
+    btn.style.display = 'none';
+
     let userPokemonProgressBar = document.getElementById('userHealthbar')
     userPokemonProgressBar.value = user.currentPokemon[0].health;
     userPokemonProgressBar.max = user.currentPokemon[0].health;
