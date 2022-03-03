@@ -18,7 +18,7 @@ function fight() {
     let button3 = document.getElementById('attack3')
     let button4 = document.getElementById('attack4')
 
-    let computerPokemonMoves = [user.currentPokemon[0].m1, user.currentPokemon[0].m2, user.currentPokemon[0].m3, user.currentPokemon[0].m4];
+    let computerPokemonMoves = [cpu.currentPokemon[0].m1, cpu.currentPokemon[0].m2, cpu.currentPokemon[0].m3, cpu.currentPokemon[0].m4];
 
     //gives move buttons initial text
     button1.innerHTML = user.currentPokemon[0].m1.name;
@@ -151,6 +151,7 @@ function fight() {
     //insert function whenever user's pokemon might get KO'd
     function swapUserPokemon() {
         if(user.currentPokemon[0].health <= 0) {
+            user.currentPokemon[0].health = user.currentPokemon[0].resetHealth;
             user.currentPokemon.splice(0, 1);
             if(user.pokemon.length > 0) {
                 user.currentPokemon.push(user.pokemon[0]);
@@ -177,6 +178,7 @@ function fight() {
     //insert function whenever computer's pokemon might get KO'd
     function swapComputerPokemon() {
         if(cpu.currentPokemon[0].health <= 0) {
+            cpu.currentPokemon[0].health = cpu.currentPokemon[0].resetHealth;
             cpu.currentPokemon.splice(0, 1);
             if(cpu.pokemon.length > 0) {
                 cpu.currentPokemon.push(cpu.pokemon[0]);
