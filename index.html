@@ -9,13 +9,17 @@
     </head>
     <body>
         <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Select Your Pokemon</button>
+        <div class="selectBtnDiv">
+            <button id="myBtn">Select Your Pokemon</button>
+        </div>
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Select Three Pokemon</p>
+                <div class="selectPokemonBackground">
+                    <p class="selectPokeText">Select Three Pokemon</p>
+                </div>
                 <div class="pokeInputDiv">
                     <label>Charizard
                         <input type="number" id="charizard" class="check" min="0" max="3" value="0">
@@ -82,8 +86,9 @@
         </div>
         <!--background image-->
         <div class="background-container">
-            <div>
-            <img class="background" src="./assets/background-battleground.png"/>
+            <div class="computerPokemonStatsDiv">
+                <h2 id="computerPokemonName"></h2>
+                <progress id="computerHealthbar"></progress>
             </div>
             <!--platform image-->
             <div class="platform-container">
@@ -93,6 +98,10 @@
             <div id="playerPokemon" class="image positionPlayer">
             </div>
             <div id="computerPokemon" class="image positionComp">
+            </div>
+            <div class="userPokemonStatsDiv">
+                <h2 id="userPokemonName"></h2>
+                <progress id="userHealthbar"></progress>
             </div>
         </div>
         <!--attack move buttons-->
@@ -107,14 +116,6 @@
         </div>
         <div class="attack4Div">
             <button id="attack4"></button>
-        </div>
-        <div class="computerPokemonStatsDiv">
-            <h2 id="computerPokemonName"></h2>
-            <progress id="computerHealthbar"></progress>
-        </div>
-        <div class="userPokemonStatsDiv">
-            <h2 id="userPokemonName"></h2>
-            <progress id="userHealthbar"></progress>
         </div>
         <div id="gameOverDiv">
             <p id="gameOver">Game Over</p>
