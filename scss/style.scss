@@ -1,0 +1,41 @@
+@import "background";
+@import "modal";
+@import "move_button";
+@import "end_game";
+
+#attack1 {
+    @include attack($button-width, $button-height, 18%, 1%, $button-border-radius, $button-position, $button-shadow, $button-font-size)
+}
+
+#attack2 {
+    @include attack($button-width, $button-height, 50%, 1%, $button-border-radius, $button-position, $button-shadow, $button-font-size)
+}
+
+#attack3 {
+    @include attack($button-width, $button-height, 18%, 11%, $button-border-radius, $button-position, $button-shadow, $button-font-size)
+}
+
+#attack4 {
+    @include attack($button-width, $button-height, 50%, 11%, $button-border-radius, $button-position, $button-shadow, $button-font-size)
+}
+
+#gameOverDiv {
+    @include end-div(absolute, 4em, 100%, 80%, 0px, wheat, hidden, 11)
+}
+
+#winDiv {
+    @include end-div(absolute, 30%, 60%, 20%, 0px, aliceblue, hidden, 10)
+}
+
+#gameOver {
+    @include end(1000%, center, red)
+}
+
+#win {
+    @include end(1000%, center, black)
+}
+
+.img-size {
+    width: 22%;
+    z-index: 4;
+}

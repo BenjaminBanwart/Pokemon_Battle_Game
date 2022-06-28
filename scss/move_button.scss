@@ -1,0 +1,17 @@
+$button-shadow: 3px 3px 4px grey;
+$button-width: 30%;
+$button-height: 8em;
+$button-border-radius: 5em;
+$button-position: absolute;
+$button-font-size: 100%;
+
+@mixin attack($width, $height, $left, $top, $radius, $position, $shadow, $font-size) {
+    width: $width;
+    height: $height;
+    margin-left: $left;
+    margin-top: $top;
+    border-radius: $radius;
+    position: $position;
+    box-shadow: $shadow;
+    font-size: $font-size;
+}

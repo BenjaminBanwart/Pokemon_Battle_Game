@@ -1,0 +1,17 @@
+@mixin end($font, $text, $color) {
+    font-size: $font;
+    text-align: $text;
+    color: $color;
+    @content
+}
+
+@mixin end-div($pos, $top, $width, $height, $pad-top, $color, $vis, $z) {
+    position: $pos;
+    top: $top;
+    width: $width;
+    height: $height;
+    padding-top: $pad-top;
+    background-color: $color;
+    visibility: $vis;
+    z-index: $z;
+}

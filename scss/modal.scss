@@ -1,0 +1,86 @@
+$bad-color: red;
+$full-width: 100%;
+
+.selectBtnDiv {
+    position: relative;
+    text-align: center;
+
+    #myBtn {
+        width: 9em;
+        height: 4em;
+        margin-bottom: 2em;
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: $full-width; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 15em; /* Could be more or less, depending on screen size */
+        height: 95%;
+        border-radius: 5px;
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+
+            &:hover, :focus{
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+        .selectPokemonBackground {
+            background-color: $bad-color;
+            border-radius: 6px;
+            width: 12em;
+            height: 1.3em;
+            text-align: center;
+            margin-bottom: 1em;
+
+            .selectPokeText {
+                text-align: center;
+                color: aliceblue;
+            }
+        }
+
+        .pokeInputDiv {
+            width: $full-width;
+
+            .check {
+                width: 50px;
+                height: 25px;
+            }
+
+            input {
+                margin: 0.8em;
+            }
+
+            .errorMessage {
+                color: $bad-color;
+                visibility: hidden;
+                @warn "You did something wrong!"
+            }
+        }
+
+        .done {
+            width: 5em;
+        }
+    }
+}

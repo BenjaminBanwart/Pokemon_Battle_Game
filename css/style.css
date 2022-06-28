@@ -1,0 +1,227 @@
+.background-container {
+  text-align: center;
+  position: relative;
+  background-image: url("../assets/background-battleground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 70%;
+  height: 35em;
+  margin: auto;
+  padding-top: 1em;
+}
+.background-container .computerPokemonStatsDiv {
+  width: 20em;
+  background-color: antiquewhite;
+  border-radius: 10px 2px;
+  box-shadow: 4px 4px 4px grey;
+  margin-top: 7em;
+  margin-left: 5em;
+}
+.background-container .computerPokemonStatsDiv #computerPokemonName {
+  margin-left: -4em;
+  padding-top: 10px;
+  margin-bottom: 8px;
+}
+.background-container .computerPokemonStatsDiv #computerHealthbar {
+  margin-left: 0.5em;
+  width: 14em;
+  margin-bottom: 5px;
+}
+.background-container .platform-container {
+  width: 60%;
+  margin-top: 7.5em;
+  margin-left: 9em;
+}
+.background-container .platform-container .platform {
+  width: 100%;
+  height: 100%;
+}
+.background-container .image {
+  z-index: 3;
+  position: absolute;
+}
+.background-container .positionPlayer {
+  margin-top: -26%;
+  margin-left: -15%;
+}
+.background-container .positionComp {
+  margin-top: -34%;
+  margin-left: 15%;
+  transform: scaleX(-1);
+}
+.background-container .userPokemonStatsDiv {
+  width: 20em;
+  background-color: antiquewhite;
+  border-radius: 10px 2px;
+  box-shadow: 4px 4px 4px grey;
+  margin-top: -8em;
+  margin-left: 40em;
+}
+.background-container .userPokemonStatsDiv #userPokemonName {
+  margin-left: -4em;
+  padding-top: 10px;
+  margin-bottom: 8px;
+}
+.background-container .userPokemonStatsDiv #userHealthbar {
+  margin-left: 0.5em;
+  width: 14em;
+  margin-bottom: 5px;
+}
+
+.selectBtnDiv {
+  position: relative;
+  text-align: center;
+}
+.selectBtnDiv #myBtn {
+  width: 9em;
+  height: 4em;
+  margin-bottom: 2em;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 15em; /* Could be more or less, depending on screen size */
+  height: 95%;
+  border-radius: 5px;
+}
+.modal .modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .modal-content .close:hover, .modal .modal-content .close :focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content .selectPokemonBackground {
+  background-color: red;
+  border-radius: 6px;
+  width: 12em;
+  height: 1.3em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.modal .modal-content .selectPokemonBackground .selectPokeText {
+  text-align: center;
+  color: aliceblue;
+}
+.modal .modal-content .pokeInputDiv {
+  width: 100%;
+}
+.modal .modal-content .pokeInputDiv .check {
+  width: 50px;
+  height: 25px;
+}
+.modal .modal-content .pokeInputDiv input {
+  margin: 0.8em;
+}
+.modal .modal-content .pokeInputDiv .errorMessage {
+  color: red;
+  visibility: hidden;
+}
+.modal .modal-content .done {
+  width: 5em;
+}
+
+#attack1 {
+  width: 30%;
+  height: 8em;
+  margin-left: 18%;
+  margin-top: 1%;
+  border-radius: 5em;
+  position: absolute;
+  box-shadow: 3px 3px 4px grey;
+  font-size: 100%;
+}
+
+#attack2 {
+  width: 30%;
+  height: 8em;
+  margin-left: 50%;
+  margin-top: 1%;
+  border-radius: 5em;
+  position: absolute;
+  box-shadow: 3px 3px 4px grey;
+  font-size: 100%;
+}
+
+#attack3 {
+  width: 30%;
+  height: 8em;
+  margin-left: 18%;
+  margin-top: 11%;
+  border-radius: 5em;
+  position: absolute;
+  box-shadow: 3px 3px 4px grey;
+  font-size: 100%;
+}
+
+#attack4 {
+  width: 30%;
+  height: 8em;
+  margin-left: 50%;
+  margin-top: 11%;
+  border-radius: 5em;
+  position: absolute;
+  box-shadow: 3px 3px 4px grey;
+  font-size: 100%;
+}
+
+#gameOverDiv {
+  position: absolute;
+  top: 4em;
+  width: 100%;
+  height: 80%;
+  padding-top: 0px;
+  background-color: wheat;
+  visibility: hidden;
+  z-index: 11;
+}
+
+#winDiv {
+  position: absolute;
+  top: 30%;
+  width: 60%;
+  height: 20%;
+  padding-top: 0px;
+  background-color: aliceblue;
+  visibility: hidden;
+  z-index: 10;
+}
+
+#gameOver {
+  font-size: 1000%;
+  text-align: center;
+  color: red;
+}
+
+#win {
+  font-size: 1000%;
+  text-align: center;
+  color: black;
+}
+
+.img-size {
+  width: 22%;
+  z-index: 4;
+}
+
+/*# sourceMappingURL=style.css.map */
