@@ -1,3 +1,4 @@
+This branch is written in TypeScript
 # Pokemon_Battle_Game
 Select three pokemon and battle them against a CPU in this pokemon mini-game!
 https://benjaminbanwart.github.io/Pokemon_Battle_Game/
