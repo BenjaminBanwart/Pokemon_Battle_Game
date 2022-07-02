@@ -1,11 +1,11 @@
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal: HTMLElement = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn: HTMLElement = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span: HTMLElement = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
@@ -25,7 +25,7 @@ window.onclick = function(event) {
 }
 
 //pokemon selection process
-var doneButton = document.querySelector('.done').addEventListener("click", function() {
+var doneButton: HTMLElement = document.querySelector('.done').addEventListener("click", function() {
     modal.style.display = "none";
     user.pokemon = []
     cpu.pokemon = []
@@ -47,8 +47,6 @@ var doneButton = document.querySelector('.done').addEventListener("click", funct
                 getPokemonByName(pokemonName, pokemonCount)
             }
         }
-        console.log("final pokemon list")
-        console.log(user.pokemon)
         getComputerChoice()
         getCurrentPokemon()
         user.createUserPokemon()

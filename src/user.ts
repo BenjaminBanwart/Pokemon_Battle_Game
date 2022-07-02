@@ -5,7 +5,7 @@ const user = {
 
     //user's pokemon is placed onto the battlefield
     createUserPokemon() {
-        const img = document.createElement('img');
+        const img: HTMLImageElement = document.createElement('img');
         img.src = user.currentPokemon[0].image;
         img.id = 'playerImage';
         img.className = 'img-size';

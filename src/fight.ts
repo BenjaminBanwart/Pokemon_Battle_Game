@@ -1,24 +1,24 @@
 function fight() {
     btn.style.display = 'none';
 
-    let userPokemonProgressBar = document.getElementById('userHealthbar')
+    let userPokemonProgressBar: HTMLProgressElement = document.getElementById('userHealthbar')
     userPokemonProgressBar.value = user.currentPokemon[0].health;
     userPokemonProgressBar.max = user.currentPokemon[0].health;
 
-    let userPokemonName = document.getElementById('userPokemonName')
+    let userPokemonName: HTMLHeadingElement = document.getElementById('userPokemonName')
     userPokemonName.innerHTML = user.currentPokemon[0].name;
 
-    let computerPokemonProgressBar = document.getElementById('computerHealthbar')
+    let computerPokemonProgressBar: HTMLProgressElement = document.getElementById('computerHealthbar')
     computerPokemonProgressBar.value = cpu.currentPokemon[0].health;
     computerPokemonProgressBar.max = cpu.currentPokemon[0].health;
 
-    let computerPokemonName = document.getElementById('computerPokemonName')
+    let computerPokemonName: HTMLHeadingElement = document.getElementById('computerPokemonName')
     computerPokemonName.innerHTML = cpu.currentPokemon[0].name;
 
-    let button1 = document.getElementById('attack1')
-    let button2 = document.getElementById('attack2')
-    let button3 = document.getElementById('attack3')
-    let button4 = document.getElementById('attack4')
+    let button1: HTMLButtonElement = document.getElementById('attack1')
+    let button2: HTMLButtonElement = document.getElementById('attack2')
+    let button3: HTMLButtonElement = document.getElementById('attack3')
+    let button4: HTMLButtonElement = document.getElementById('attack4')
 
     let computerPokemonMoves = [cpu.currentPokemon[0].m1, cpu.currentPokemon[0].m2, cpu.currentPokemon[0].m3, cpu.currentPokemon[0].m4];
 

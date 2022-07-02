@@ -1,16 +1,28 @@
 //pokemon class works as blueprint for each individual pokemon
 class Pokemon {
-    constructor (name, sku, health, resetHealth, image, weakness, m1, m2, m3, m4){
-        this.name = name;
-        this.sku = sku;
-        this.health = health;
-        this.resetHealth = resetHealth;
-        this.image = image;
-        this.weakness = weakness;
-        this.m1 = m1;
-        this.m2 = m2;
-        this.m3 = m3;
-        this.m4 = m4;
+
+    name: string;
+    sku: number;
+    health: number;
+    resetHealth: number;
+    image: string;
+    weakness: string[];
+    m1: object;
+    m2: object;
+    m3: object;
+    m4: object;
+
+    constructor (Name: string, Sku: number, Health: number, ResetHealth: number, Pokeimage: string, Weakness: string[], M1: object, M2: object, M3: object, M4: object){
+        this.name = Name;
+        this.sku = Sku;
+        this.health = Health;
+        this.resetHealth = ResetHealth;
+        this.image = Pokeimage;
+        this.weakness = Weakness;
+        this.m1 = M1;
+        this.m2 = M2;
+        this.m3 = M3;
+        this.m4 = M4;
     }
 }
 
