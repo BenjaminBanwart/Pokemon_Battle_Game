@@ -42,113 +42,40 @@ function fight() {
         } else {return user.currentPokemon[0].health = Number(userPokemonProgressBar.value) - user.currentPokemon[0].health}
     }
 
-    button1.addEventListener('click', function () {
-        userRealDamage(user.currentPokemon[0].m1.type, user.currentPokemon[0].m1.damage)
-        user.turn = false;
-        cpu.turn = true;
-        swapComputerPokemon()
-        if(user.turn == false && cpu.currentPokemon[0].health > 0) {
-            //on computer turn, hide attack move buttons
-            disableButtons()
-            let computerChoice = Math.floor(Math.random() * 4) + 1;
-            for(let m = 0; m < computerPokemonMoves.length; m++) {
-                if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
-                    setTimeout(() => {
-                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
-                        user.turn = true;
-                        cpu.turn = false;
-                        swapUserPokemon()
-                        if(user.turn == true) {
-                            //on user turn, attack move buttons become available again
-                            enableButtons()
-                        }   
-                    }, 3000);
+    //this is the fight logic
+    function buttonListener(button, type, damage) {
+        button.addEventListener('click', function () {
+            userRealDamage(type, damage)
+            user.turn = false;
+            cpu.turn = true;
+            swapComputerPokemon()
+            if(user.turn == false && cpu.currentPokemon[0].health > 0) {
+                //on computer turn, hide attack move buttons
+                disableButtons()
+                let computerChoice = Math.floor(Math.random() * 4) + 1;
+                for(let m = 0; m < computerPokemonMoves.length; m++) {
+                    if(computerPokemonMoves[m].sku == computerChoice) {
+                        //computer's turn happens after 3 seconds
+                        setTimeout(() => {
+                            cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
+                            user.turn = true;
+                            cpu.turn = false;
+                            swapUserPokemon()
+                            if(user.turn == true) {
+                                //on user turn, attack move buttons become available again
+                                enableButtons()
+                            }   
+                        }, 3000);
+                    }
                 }
             }
-        }
-    })
+        })
+    }
 
-    button2.addEventListener('click', function () {
-        userRealDamage(user.currentPokemon[0].m2.type, user.currentPokemon[0].m2.damage)
-        user.turn = false;
-        cpu.turn = true;
-        swapComputerPokemon()
-        if(user.turn == false && cpu.currentPokemon[0].health > 0) {
-            //on computer turn, hide attack move buttons
-            disableButtons()
-            let computerChoice = Math.floor(Math.random() * 4) + 1;
-            for(let m = 0; m < computerPokemonMoves.length; m++) {
-                if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
-                    setTimeout(() => {
-                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
-                        user.turn = true;
-                        cpu.turn = false;
-                        swapUserPokemon()
-                        if(user.turn == true) {
-                            //on user turn, attack move buttons become available again
-                            enableButtons()
-                        }   
-                    }, 3000);
-                }
-            }
-        }
-    })
-
-    button3.addEventListener('click', function () {
-        userRealDamage(user.currentPokemon[0].m3.type, user.currentPokemon[0].m3.damage)
-        user.turn = false;
-        cpu.turn = true;
-        swapComputerPokemon()
-        if(user.turn == false && cpu.currentPokemon[0].health > 0) {
-            //on computer turn, hide attack move buttons
-            disableButtons()
-            let computerChoice = Math.floor(Math.random() * 4) + 1;
-            for(let m = 0; m < computerPokemonMoves.length; m++) {
-                if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
-                    setTimeout(() => {
-                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
-                        user.turn = true;
-                        cpu.turn = false;
-                        swapUserPokemon()
-                        if(user.turn == true) {
-                            //on user turn, attack move buttons become available again
-                            enableButtons()
-                        }
-                    }, 3000);
-                }
-            }
-        }
-    })
-
-    button4.addEventListener('click', function () {
-        userRealDamage(user.currentPokemon[0].m4.type, user.currentPokemon[0].m4.damage)
-        user.turn = false;
-        cpu.turn = true;
-        swapComputerPokemon()
-        if(user.turn == false && cpu.currentPokemon[0].health > 0) {
-            //on computer turn, hide attack move buttons
-            disableButtons()
-            let computerChoice = Math.floor(Math.random() * 4) + 1;
-            for(let m = 0; m < computerPokemonMoves.length; m++) {
-                if(computerPokemonMoves[m].sku == computerChoice) {
-                    //computer's turn happens after 3 seconds
-                    setTimeout(() => {
-                        cpuRealDamage(computerPokemonMoves[m].type, computerPokemonMoves[m].damage)
-                        user.turn = true;
-                        cpu.turn = false;
-                        swapUserPokemon()
-                        if(user.turn == true) {
-                            //on user turn, attack move buttons become available again
-                            enableButtons()
-                        }   
-                    }, 3000);
-                }
-            }
-        }
-    })
+    buttonListener(button1, user.currentPokemon[0].m1.type, user.currentPokemon[0].m1.damage)
+    buttonListener(button2, user.currentPokemon[0].m2.type, user.currentPokemon[0].m2.damage)
+    buttonListener(button3, user.currentPokemon[0].m3.type, user.currentPokemon[0].m3.damage)
+    buttonListener(button4, user.currentPokemon[0].m4.type, user.currentPokemon[0].m4.damage)
 
     //insert function whenever user's pokemon might get KO'd
     function swapUserPokemon() {
